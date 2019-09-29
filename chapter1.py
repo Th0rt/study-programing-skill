@@ -1,9 +1,11 @@
 def q_1(s: str, c: str = None) -> bool:
     if s == "":
         return True
+
     for i in range(len(s)):
         if c == s[i]:
             return False
+
     return q_1(s=s[1:], c=s[0])
 
 
@@ -14,6 +16,7 @@ def q_2(s1: str, s2: str) -> bool:
     for i in range(len(s2)):
         if s1[0] == s2[i]:
             return q_2(s1[1:], s2)
+
     return False
 
 
