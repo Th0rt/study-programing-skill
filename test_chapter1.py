@@ -15,6 +15,9 @@ class TestChapter1(unittest.TestCase):
         assert chapter1.q_3("Mr John Smith ", 13) == "Mr%20John%20Smith"
         assert not chapter1.q_3("MrJohnSmith", 11) == "Mr%20John%20Smith"
 
+    def test_q_4(self):
+        assert chapter1.q_4("Tact Coa")
+
 
 if __name__ == "__main__":
     unittest.main()

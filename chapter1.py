@@ -30,3 +30,7 @@ def q_3(s: str, l: int, prefix: str = "") -> str:
         c = s[0]
 
     return q_3(s=s[1:], l=l-1, prefix=prefix + c)
+
+
+def q_4(s: str) -> bool:
+    pass
