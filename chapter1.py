@@ -20,7 +20,7 @@ def q_2(s1: str, s2: str) -> bool:
     return False
 
 
-def q_3(s: str, l: int, prefix: str = "") -> bool:
+def q_3(s: str, l: int, prefix: str = "") -> str:
     if len(s) == 1:
         return prefix
 
