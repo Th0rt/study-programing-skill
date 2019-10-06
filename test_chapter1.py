@@ -17,7 +17,7 @@ class TestChapter1(unittest.TestCase):
 
     def test_q_4(self):
         assert chapter1.q_4("Tact Coa")
-        assert chapter1.q_4("たけややけた")
+        assert chapter1.q_4("たけや　やけた")
         assert chapter1.q_4("ああ")
         assert not chapter1.q_4("あかさたなはまやらわ")
         assert not chapter1.q_4("")
