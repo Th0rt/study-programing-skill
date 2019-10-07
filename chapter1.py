@@ -59,7 +59,7 @@ def q_4(s: str) -> bool:
     odd_char_count = reduce(lambda x, y: x + (y % 2), mem.values(), 0)
 
     # 文字列長が偶数の場合は、全文字が偶数回出現していなくてはならない
-    # O(1)
+    # O(n)
     if sum(mem.values()) % 2 == 0:
         return odd_char_count == 0
     # 文字列長が奇数の場合は、1つだけ奇数回、他は全て偶数回出現していなくてはならない
