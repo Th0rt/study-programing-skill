@@ -1,38 +1,5 @@
+import unittest
 from functools import reduce
-
-
-def q_1(s: str, c: str = None) -> bool:
-    if s == "":
-        return True
-
-    for i in range(len(s)):
-        if c == s[i]:
-            return False
-
-    return q_1(s=s[1:], c=s[0])
-
-
-def q_2(s1: str, s2: str) -> bool:
-    if s1 == "":
-        return True
-
-    for i in range(len(s2)):
-        if s1[0] == s2[i]:
-            return q_2(s1[1:], s2)
-
-    return False
-
-
-def q_3(s: str, l: int, prefix: str = "") -> str:
-    if len(s) == 1:
-        return prefix
-
-    if s[0] == " ":
-        c = "%20"
-    else:
-        c = s[0]
-
-    return q_3(s=s[1:], l=l-1, prefix=prefix + c)
 
 
 def q_4(s: str) -> bool:
@@ -65,3 +32,18 @@ def q_4(s: str) -> bool:
     # 文字列長が奇数の場合は、1つだけ奇数回、他は全て偶数回出現していなくてはならない
     else:
         return odd_char_count == 1
+
+
+class TestQuestion4(unittest.TestCase):
+
+    def test_q_4(self):
+        assert q_4("Tact Coa")
+        assert q_4("たけや　やけた")
+        assert q_4("ああ")
+        assert not q_4("あかさたなはまやらわ")
+        assert not q_4("")
+        assert not q_4("あ")
+
+
+if __name__ == "__main__":
+    unittest.main()
