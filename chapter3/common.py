@@ -10,14 +10,14 @@ class Stack:
         self._top = top
 
     def pop(self):
-        if not self.top:
+        if not self._top:
             return None
         item = self._top
         self._top = self._top.next
         return item
 
     def push(self, item):
-        t = StackNode(item, self.top)
+        t = StackNode(item, self._top)
         self._top = t
 
     def peek(self):
