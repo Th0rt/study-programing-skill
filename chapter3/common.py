@@ -23,5 +23,6 @@ class Stack:
     def peek(self):
         return self._top
 
+    @property
     def is_empty(self):
         return self._top is None
