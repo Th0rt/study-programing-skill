@@ -1,11 +1,12 @@
 
 class StackNode:
-    def __init__(self, data, next: StackNode = None):
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
+
 class Stack:
-    def __init__(self, top : StackNode = None):
+    def __init__(self, top: StackNode = None):
         self._top = top
 
     def pop(self):
@@ -23,4 +24,4 @@ class Stack:
         return self._top
 
     def is_empty(self):
-        return self._top == None
+        return self._top is None
