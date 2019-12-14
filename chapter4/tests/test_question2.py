@@ -1,6 +1,6 @@
 import pytest
 
-from chapter4.common import Node, Tree
+from lib.tree import Node, Tree
 from chapter4.question2 import _create_children, create_tree, _bulk_create_children
 
 

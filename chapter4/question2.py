@@ -1,4 +1,4 @@
-from chapter4.common import Tree, Node
+from lib.tree import Tree, Node
 from typing import List
 
 
