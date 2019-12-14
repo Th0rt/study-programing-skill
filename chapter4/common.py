@@ -5,12 +5,12 @@ from typing import List
 @dataclass
 class Node:
     name: str
-    children: List["Node"]
+    children = []
 
 
 class Tree:
-    root: Node
+    root: Node = None
 
 
 class Graph:
-    nodes: List[Node]
+    nodes: List[Node] = []
