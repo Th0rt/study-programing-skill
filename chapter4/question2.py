@@ -1,4 +1,4 @@
-from lib.tree import Tree, Node
+from lib.tree import Tree, TreeNode
 from typing import List
 
 
@@ -8,7 +8,7 @@ def create_tree(array, tree=Tree(), nodes=[]):
 
     if tree.root is None:
         tree = Tree()
-        root = Node(array[0])
+        root = TreeNode(array[0])
         tree.root = root
         return create_tree(array[1:], tree, [root])
 
@@ -30,6 +30,6 @@ def _create_children(parent, array):
     if len(array) == 0:
         return []
 
-    children = [Node(data) for data in array]
+    children = [TreeNode(data) for data in array]
     parent.children = children
     return children
