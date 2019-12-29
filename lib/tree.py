@@ -12,6 +12,7 @@ class Tree:
         self.root = root
 
 
+
 class BinaryTreeNode(TreeNode):
     def __init__(self, name: str, left=None, right=None):
         self.name = name
@@ -20,4 +21,5 @@ class BinaryTreeNode(TreeNode):
 
 
 class BinaryTree(Tree):
-    pass
+    def __init__(self, root: BinaryTreeNode = None):
+        self.root = root
