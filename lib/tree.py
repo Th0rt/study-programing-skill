@@ -33,3 +33,4 @@ def list_to_bst(values):
     node.left = list_to_bst(values[:mid_index])
     node.right = list_to_bst(values[mid_index + 1 :])
     return node
+
