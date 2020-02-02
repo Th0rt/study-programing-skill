@@ -1,18 +1,40 @@
-
-def count_root(num, tree, stack=[], root_count=0):
-
-
-    return True
+def count_root(threshold, tree):
+    return _count_root(threshold, tree.root)
 
 
-def _count(num, limit, stack=[])
-    if stack is []:
-        if num < limit:
-            stack.append(node.value)
-        return stack
+def _count_root(threshold, node, interims=[], root_count=0):
+    if node is None:
+        return root_count
 
-    num2 = stack[0] + num
-    if num2 < limit:
-        stack.append(num2)
+    interims.append(0)
+    equals, smalls = add_and_filter(
+        nums=interims, additional=node.value, threshold=threshold
+    )
+    root_count += len(equals)
 
-    return _count(num, limit, stack=stack[1:])
+    if node.left:
+        root_count += _count_root(threshold, node.left, smalls)
+
+    if node.right:
+        root_count += _count_root(threshold, node.right, smalls)
+
+    return root_count
+
+
+def add_and_filter(nums, additional, threshold):
+    """
+    numsの各値にaddtionalを加算し、threshold比較する。
+    その後、thresholdと比較し、thresholdと等しい値と、thresholdより小さい数を返す。
+    """
+    equals = []
+    smalls = []
+
+    for num in nums:
+        t = num + additional
+
+        if t < threshold:
+            smalls.append(t)
+        if t == threshold:
+            equals.append(t)
+
+    return equals, smalls
