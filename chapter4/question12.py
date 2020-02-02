@@ -6,7 +6,7 @@ def _count_root(threshold, node, interims=[], root_count=0):
     if node is None:
         return root_count
 
-    interims.append(0)
+    interims.append(0)  # node単体の値を計算対象に入れるため、0を加える
     equals, smalls = add_and_filter(
         nums=interims, additional=node.value, threshold=threshold
     )
