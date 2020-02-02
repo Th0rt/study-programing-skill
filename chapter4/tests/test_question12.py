@@ -19,7 +19,7 @@ def tree1():
 
 @pytest.fixture
 def tree2():
-    """ 1-2-3-4 """
+    """ 1-2-3-4 * 2 """
     return BinaryTree(
         root=BinaryTreeNode(
             value=1,
