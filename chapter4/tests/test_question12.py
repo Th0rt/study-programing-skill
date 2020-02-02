@@ -42,4 +42,4 @@ def test2(tree2):
 
 
 def test_add_and_filter():
-    assert add_and_filter([6, 5, 3, 0], 4, 9) == (1, [7, 4])
+    assert add_and_filter([6, 5, 3, 0], 4, 9) == ([9], [7, 4])
