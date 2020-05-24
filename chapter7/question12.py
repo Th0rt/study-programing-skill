@@ -29,6 +29,8 @@ class MyHashTable:
 
     def __getitem__(self, key):
         tree = self._nodes[self._get_hash(key)]
+        if tree is None:
+            raise KeyError()
         return tree.get(key).value
 
     def delete(self, key):
@@ -120,7 +122,9 @@ class TestMyHashTable(unittest.TestCase):
         assert ht["aa"] == "hoge"
         assert ht["bbb"] == "fuga"
 
-        aa_node = ht._nodes[4]
+        tree = ht._nodes[4]
+
+        aa_node = tree.head
         assert aa_node.key == "aa"
         assert aa_node.value == "hoge"
 
