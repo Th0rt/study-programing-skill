@@ -70,22 +70,26 @@ class MyHashNodeTree:
     def delete(self, key):
         target = self.get(key)
 
-        # 削除対象が先頭の場合
         if self.head == target:
-            if self.tail == target:
-                self.head = None
-                self.tail = None
-            else:
-                self.head = self.head.next
-        # 削除対象が最後尾の場合
+            self.delete_head()
         elif self.tail == target:
-            self.tail.before = None
-        # 削除対象が中間の場合
+            self.delete_tail()
         elif all([target.before, target.next]):
             target.before.next = target.next
         else:
             # ここにはこないはずなのでエラーを出す
             raise ValueError()
+
+    def delete_head(self):
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = self.head.next
+
+    def delete_tail(self):
+        self.tail = self.tail.before
+        self.tail.next = None
 
 
 @dataclass()
